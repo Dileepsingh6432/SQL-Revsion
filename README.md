@@ -2,23 +2,38 @@
 ## A short note for revising the SQL.
 
 What is SQL?
+
 SQL stands for Structured Query Language
+
 SQL lets you access and manipulate databases
+
 SQL became a standard of the American National Standards Institute (ANSI) in 1986, and of the International Organization for Standardization (ISO) in 1987
 
 What Can SQL do?
+
 SQL can execute queries against a database
+
 SQL can retrieve data from a database
+
 SQL can insert records in a database
+
 SQL can update records in a database
+
 SQL can delete records from a database
+
 SQL can create new databases
+
 SQL can create new tables in a database
+
 SQL can create stored procedures in a database
+
 SQL can create views in a database
+
 SQL can set permissions on tables, procedures, and views
 
+
 RDBMS
+
 RDBMS stands for Relational Database Management System.
 
 RDBMS is the basis for SQL, and for all modern database systems such as MS SQL Server, IBM DB2, Oracle, MySQL, and Microsoft Access.
@@ -32,20 +47,33 @@ A record, also called a row, is each individual entry that exists in a table. Fo
 A column is a vertical entity in a table that contains all information associated with a specific field in a table.
 
 SQL keywords are NOT case sensitive: select is the same as SELECT
+
 Some of The Most Important SQL Commands
+
 SELECT - extracts data from a database
+
 UPDATE - updates data in a database
+
 DELETE - deletes data from a database
+
 INSERT INTO - inserts new data into a database
+
 CREATE DATABASE - creates a new database
+
 ALTER DATABASE - modifies a database
+
 CREATE TABLE - creates a new table
+
 ALTER TABLE - modifies a table
+
 DROP TABLE - deletes a table
+
 CREATE INDEX - creates an index (search key)
+
 DROP INDEX - deletes an index
 
 genral syntax for SQL query:
+
 SELECT column1, column2, ...
 FROM table_name;
 
@@ -53,12 +81,15 @@ example:
 SELECT columname1, columnname2 FROM tablename
 
 selecting distinct values of a column:
+
 SELECT DISTINCT Country FROM Customers
 
 Counting the distinct number of country
+
 SELECT COUNT(DISTINCT Country) FROM Customers
 
 WHERE Syntax
+
 SELECT column1, column2, ...
 FROM table_name
 WHERE condition1 AND condition2 AND condition3 ...
@@ -67,6 +98,7 @@ condition operators for SQL
 '=' Equal '>' Greater than '<' Less than '>=' Greater than or equal '<=' Less than or equal '<>' Not equal. Note: In some versions of SQL this operator may be written as '!=' 'BETWEEN' Between a certain range 'LIKE' Search for a pattern 'IN' To specify multiple possible values for a column
 
 Some examples for various conditions
+
 SELECT * FROM Customers WHERE Country='Mexico'
 
 SELECT * FROM Customers
@@ -75,7 +107,8 @@ WHERE Country='Germany' AND City='Berlin'
 SELECT * FROM Customers
 WHERE Country='Germany' AND (City='Berlin' OR City='München')
 
-Order By
+###Order By
+
 SELECT * FROM Customers
 ORDER BY Country DESC
 
