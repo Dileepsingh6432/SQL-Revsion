@@ -322,13 +322,13 @@ Temporary tables are often used to store intermediate results during complex que
 - Storing and manipulating intermediate data for complex calculations or data transformations.
 - Improving query performance by reducing the complexity of a single query into multiple steps.
 - Sharing intermediate results among multiple queries or stored procedures within the same session.
-- Providing a temporary storage space for temporary data that is not needed beyond the current task or session.
+- Providing temporary storage space for temporary data that is not needed beyond the current task or session.
 
 4. Accessing Temporary Tables:
 Temporary tables can be accessed and manipulated like regular tables within the same session. You can perform SELECT, INSERT, UPDATE, and DELETE operations on them. They can also be joined with other tables or used in subqueries as needed.
 
 Here's an example that demonstrates accessing and manipulating a temporary table:
-```sql
+```SQL
 INSERT INTO #TempTable (ID, Name)
 VALUES (1, 'John'), (2, 'Jane');
 
@@ -352,9 +352,9 @@ It's important to use temporary tables judiciously and consider their impact on 
 
 ### Self Joins:
 
-In SQL, a self join is a join operation performed on a single table, where the table is joined with itself. It allows you to combine rows from the same table based on related values in order to retrieve additional information or establish relationships within the table. Here's an explanation of self joins along with SQL query examples:
+In SQL, a self-join is a join operation performed on a single table, where the table is joined with itself. It allows you to combine rows from the same table based on related values in order to retrieve additional information or establish relationships within the table. Here's an explanation of self joins along with SQL query examples:
 
-Consider a table called "Employees" with columns such as "EmployeeID," "Name," and "ManagerID." The "ManagerID" column holds the ID of the employee's manager. With a self join, we can retrieve additional information about the employee and their manager by matching the "ManagerID" with the "EmployeeID." Here's an example:
+Consider a table called "Employees" with columns such as "EmployeeID," "Name," and "ManagerID." The "ManagerID" column holds the ID of the employee's manager. With a self-join, we can retrieve additional information about the employee and their manager by matching the "ManagerID" with the "EmployeeID." Here's an example:
 
 ```
 SELECT e.Name AS EmployeeName, m.Name AS ManagerName
@@ -364,7 +364,7 @@ JOIN Employees m ON e.ManagerID = m.EmployeeID;
 
 In this query, we create aliases "e" and "m" for the "Employees" table to differentiate between the employee and manager records. The join condition `e.ManagerID = m.EmployeeID` connects the employee with their respective manager by matching the IDs. The result set will display the employee name and their corresponding manager name.
 
-Self joins can also be used to find hierarchical relationships within a table, such as employee hierarchies. For example, let's find all employees and their respective managers in a hierarchical format:
+Self-joins can also be used to find hierarchical relationships within a table, such as employee hierarchies. For example, let's find all employees and their respective managers in a hierarchical format:
 
 ```
 SELECT e.Name AS EmployeeName, m.Name AS ManagerName
@@ -372,13 +372,13 @@ FROM Employees e
 LEFT JOIN Employees m ON e.ManagerID = m.EmployeeID;
 ```
 
-In this query, we use a left join to ensure that even employees without a manager are included in the result set. The result will display the employee name and their respective manager name. If an employee does not have a manager (e.g., top-level managers), the manager name will be NULL.
+In this query, we use a left join to ensure that even employees without a manager are included in the result set. The result will display the employee's name and their respective manager's name. If an employee does not have a manager (e.g., top-level managers), the manager's name will be NULL.
 
-Self joins are powerful when working with hierarchical data or when you need to establish relationships within a single table. They enable you to retrieve additional information about records based on related values within the same table.
+Self-joins are powerful when working with hierarchical data or when you need to establish relationships within a single table. They enable you to retrieve additional information about records based on related values within the same table.
 
 ### Window functions like PARTITION, LEAD, LAG, and NTILE:
 
-Window functions are a powerful feature in SQL that allow you to perform calculations over a set of rows, called a window, within a result set. They provide advanced analytical capabilities and can help solve complex data analysis problems. Here are some commonly used window functions:
+Window functions are a powerful feature in SQL that allows you to perform calculations over a set of rows, called a window, within a result set. They provide advanced analytical capabilities and can help solve complex data analysis problems. Here are some commonly used window functions:
 
 1. PARTITION BY:
 The PARTITION BY clause is used to divide the result set into partitions or groups based on specified columns. It allows you to apply window functions separately to each partition.
